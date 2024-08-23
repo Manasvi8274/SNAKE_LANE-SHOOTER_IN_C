@@ -271,3 +271,19 @@ void snake_draw_gameover()
     Beep(400, 20);
     Beep(300, 20);
 }
+
+// int main()
+// {
+//     // system("cls");
+//     snake_setup();
+//     while (!gameover)
+//     {
+//         snake_input();
+//         snake_draw();
+//         snake_makelogic();
+//     }
+//     system("cls");
+//     snake_draw_gameover();
+//     printf("%d", score * 10);
+//     return 0;
+// }
