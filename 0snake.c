@@ -11,6 +11,80 @@ int height = 20, width = 30, x, y, fx, fy, flag, gameover, score;
 int tailx[100], taily[100];
 int piece = 0;
 
+void snake_input()
+{
+    if (kbhit())
+    {
+        switch (getch())
+        {
+        case ('w'): // up
+        {
+            flag = 1;
+            break;
+        }
+
+        case ('s'): // down
+        {
+            flag = 2;
+            break;
+        }
+
+        case ('a'): // left
+        {
+            flag = 3;
+            break;
+        }
+
+        case ('d'): // right
+        {
+            flag = 4;
+            break;
+        }
+        case (72): // up
+        {
+            flag = 1;
+            break;
+        }
+
+        case (80): // down
+        {
+            flag = 2;
+            break;
+        }
+
+        case (75): // left
+        {
+            flag = 3;
+            break;
+        }
+
+        case (77): // right
+        {
+            flag = 4;
+            break;
+        }
+        }
+    }
+}
+
+void snake_setup()
+{
+    x = height / 2;
+    y = width / 2;
+    // printf("x = %d\n", x);
+    // printf("y = %d\n", y);
+
+label:
+    fx = rand() % height;
+    fy = rand() % width;
+    if (fx == 0 || fy == 0)
+    {
+        goto label;
+    }
+    score = 0;
+    gameover = 0;
+}
+
 void snake_draw()
 {
     system("cls"); // alter clrscr
