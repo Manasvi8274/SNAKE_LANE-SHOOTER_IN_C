@@ -11,6 +11,73 @@ int height = 20, width = 30, x, y, fx, fy, flag, gameover, score;
 int tailx[100], taily[100];
 int piece = 0;
 
+void snake_makelogic()
+{
+    int i;
+    int prevx, prevy, prev2x, prev2y;
+    prevx = tailx[0];
+    prevy = taily[0];
+    tailx[0] = x;
+    taily[0] = y;
+    for (i = 1; i <= piece; i++)
+    {
+        prev2x = tailx[i];
+        prev2y = taily[i];
+        tailx[i] = prevx;
+        taily[i] = prevy;
+        prevx = prev2x;
+        prevy = prev2y;
+    }
+
+    Sleep(105);
+    switch (flag)
+    {
+    case 1:
+    {
+        x--;
+        break;
+    }
+    case 2:
+    {
+        x++;
+        break;
+    }
+    case 3:
+    {
+        y--;
+        break;
+    }
+    case 4:
+    {
+        y++;
+    }
+    }
+    if (x == 0 || x == height || y == 0 || y == width)
+    {
+        gameover = 1;
+    }
+    for (int st = 1; st < piece; st++)
+    {
+        if (tailx[st] == x && taily[st] == y)
+        {
+            gameover = 1;
+        }
+    }
+    if (x == fx && y == fy)
+    {
+        Beep(500, 800);
+        score++;
+        piece++;
+    label2:
+        fx = rand() % height;
+        fy = rand() % width;
+        if (fx == 0 || fy == 0)
+        {
+            goto label2;
+        }
+    }
+}
+
 void snake_input()
 {
     if (kbhit())
