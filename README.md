@@ -12,7 +12,7 @@ HOW TO USE :-
     1. Download the whole repository or clone it via github link.
     2. Then open the repository in any code editor and run main.c
     3. Choose your game and mode you want to play.
-    4. ENJOY ☻
+    4. ENJOY ☻☻☻☻
 
 FEATURES :-
     1.DIFFERENT MODES - SINGLE PLAYER , DOUBLE PLAYER , TIME MODE
@@ -29,3 +29,5 @@ CODE EXPLANATION:-
     2.SHOOTER GAME:-
         TIME COMPLEXITY - O(n^2)(as it works on both rows and columns , creating monster,shooter,bullet)
         SPACE COMPLEXITY - O(a+b+c) (where a+b+c = sum of number of bullet shooted in lane_1 , lane_2 and lane_3)
+
+WORKING ON TO ADD MORE GAMES ☻☻☻☻

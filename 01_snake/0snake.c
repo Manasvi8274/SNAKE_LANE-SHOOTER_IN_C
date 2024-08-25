@@ -3,7 +3,6 @@
 #include <conio.h>
 #include <time.h>
 #include <Windows.h>
-#include <windows.h>
 #include "0snake.h"
 
 int height = 20, width = 30, x, y, fx, fy, flag, gameover, score;
