@@ -3,8 +3,6 @@
 #include <conio.h>
 #include <time.h>
 #include <Windows.h>
-#include <fcntl.h>
-
 // #include "queue.c"
 
 int height = 30, width = 30, x, y, score = 0, gameover = 0, l1 = 0, l2 = 0, l3 = 1, life = 3;
@@ -19,7 +17,7 @@ void shooter_logic()
     {
         if (bullet_l1[b] == 3 && monst_lane == 0)
         {
-            score++;
+            score += 10;
             Beep(500, 200);
             int l;
         label_l1:
@@ -36,7 +34,7 @@ void shooter_logic()
     {
         if (bullet_l2[b] == 3 && monst_lane == 1)
         {
-            score++;
+            score += 10;
             Beep(500, 200);
             int l;
         label_l2:
@@ -53,7 +51,7 @@ void shooter_logic()
     {
         if (bullet_l3[b] == 3 && monst_lane == 2)
         {
-            score++;
+            score += 10;
             Beep(500, 200);
             int l;
         label_l3:
@@ -333,9 +331,24 @@ int main()
         // Sleep(100);
     }
     printf("\033[0;37m");
-    printf("YOUR SCORE IS : %d",score);
-    // FILE *fptr;
-    // fptr = open("shooter_High_Score",O_CREAT | O_RDWR);
-
+    // printf("YOUR SCORE IS : %d",score);
+    FILE *fptr = fopen("shooter_High_Score", "r");
+    char strx[100];
+    int x = atoi(fgets(strx, 100, fptr));
+    fclose(fptr);
+    if (x > score)
+    {
+        printf("YOUR SCORE IS : %d\n", score);
+        printf("HIGHEST SCORE : %d\n", x);
+        printf("YOU LOSE BY : %d", x - score);
+    }
+    else
+    {
+        printf("YOUR SCORE : %d\n", score);
+        printf("CONGRATULATIONS , YOU BEAT THE HIGH SCORE by %d\n", score - x);
+        FILE *fptr = fopen("shooter_High_Score", "w");
+        fprintf(fptr, "%d", score);
+        fclose(fptr);
+    }
     return 0;
 }

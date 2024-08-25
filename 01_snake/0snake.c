@@ -205,6 +205,7 @@ void snake_draw()
         printf("\n");
     }
 }
+
 void snake_draw_gameover()
 {
     int i, j;
@@ -272,18 +273,35 @@ void snake_draw_gameover()
     Beep(300, 20);
 }
 
-// int main()
-// {
-//     // system("cls");
-//     snake_setup();
-//     while (!gameover)
-//     {
-//         snake_input();
-//         snake_draw();
-//         snake_makelogic();
-//     }
-//     system("cls");
-//     snake_draw_gameover();
-//     printf("%d", score * 10);
-//     return 0;
-// }
+int main()
+{
+    // system("cls");
+    snake_setup();
+    while (!gameover)
+    {
+        snake_input();
+        snake_draw();
+        snake_logic();
+    }
+    system("cls");
+    snake_draw_gameover();
+    FILE *fptr = fopen("snake_High_Score", "r");
+    char strx[100];
+    int x = atoi(fgets(strx, 100, fptr));
+    fclose(fptr);
+    if (x > score)
+    {
+        printf("YOUR SCORE IS : %d\n", score);
+        printf("HIGHEST SCORE : %d\n", x);
+        printf("YOU LOSE BY : %d", x - score);
+    }
+    else
+    {
+        printf("YOUR SCORE : %d\n", score);
+        printf("CONGRATULATIONS , YOU BEAT THE HIGH SCORE by %d\n", score - x);
+        FILE *fptr = fopen("snake_High_Score", "w");
+        fprintf(fptr, "%d", score);
+        fclose(fptr);
+    }
+    return 0;
+}
