@@ -11,7 +11,7 @@ int height = 20, width = 30, x, y, fx, fy, flag, gameover, score;
 int tailx[100], taily[100];
 int piece = 0;
 
-void snake_makelogic()
+void snake_logic()
 {
     int i;
     int prevx, prevy, prev2x, prev2y;
