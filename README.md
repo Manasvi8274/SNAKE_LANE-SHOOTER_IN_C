@@ -11,12 +11,14 @@ Configurations:-
 HOW TO USE :-
     1. Download the whole repository or clone it via github link.
     2. Then open the repository in any code editor and run main.c
-    3. Choose your game and mode you want to play.
-    4. ENJOY ☻☻☻☻
+    3. command to run main.c - gcc -o main.exe main.c -L. main_lib.a (as library is used);
+    4. Choose your game and mode you want to play.
+    5. ENJOY ☻☻☻☻
 
 FEATURES :-
     1.DIFFERENT MODES - SINGLE PLAYER , DOUBLE PLAYER , TIME MODE
     2.KEEPS RECORD OF HIGHEST SCORE
+    3.Library used so no data goes into the hand of player
 
 GAMES :-
     1. SIMPLE SNAKE GAME
