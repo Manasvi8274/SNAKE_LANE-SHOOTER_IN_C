@@ -37,6 +37,7 @@ void play_single_player_snake()
         fprintf(fptr, "%d", score);
         fclose(fptr);
     }
+    Sleep(1000);
 };
 void play_double_player_snake()
 {
@@ -106,6 +107,7 @@ void play_double_player_snake()
     {
         printf("%s WINS THIS ROUND AGAINST %s BY %d POINTS/n", p2_name, p1_name, p2_score - p1_score);
     }
+    Sleep(1000);
 };
 void play_single_player_shooter()
 {
@@ -146,6 +148,7 @@ void play_single_player_shooter()
         fprintf(fptr, "%d", score);
         fclose(fptr);
     }
+    Sleep(1000);
 };
 void play_double_player_shooter()
 {
@@ -219,4 +222,5 @@ void play_double_player_shooter()
     {
         printf("%s WINS THIS ROUND AGAINST %s BY %d POINTS\n", p2_name, p2_name, p2_score - p1_score);
     }
+    Sleep(1000);
 };
