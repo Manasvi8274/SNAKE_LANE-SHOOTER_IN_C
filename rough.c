@@ -24,7 +24,12 @@
 //     // }
 //     // return 0;
 // }
+int *x(int *c)
+{
+    printf("%d", *c - 1);
+}
 int main()
 {
-    printf("%c", 2);
+    int y = 123;
+    x(&y);
 }
