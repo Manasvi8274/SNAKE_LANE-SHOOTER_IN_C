@@ -3,26 +3,57 @@
 #include <Windows.h>
 #include <time.h>
 #include <stdlib.h>
-#include "01_snake/0snake.c"
-#include "01_snake/0snake.h"
-// #include "02_shooter/shooter.c"
-// #include "02_shooter/queue.c"
+#include "main.h"
+
+
 
 int main()
 {
     system("cls");
-    printf("Enter the game number you want to play.\n");
-    printf("1.SNAKE\n2.SHOOTER");
-    clock_t start = clock();
-    snake_setup();
-    while (!gameover && ((clock() - start) < (100 * CLOCKS_PER_SEC)))
-    {
-        snake_input();
-        snake_draw();
-        snake_logic();
+    printf("Enter the game number you want to play.(1 or 2 or 3)\n");
+    printf("1.SNAKE\n2.SHOOTER(time mode)\n3.EXIT");
+    int choice;
+    scanf("%d",&choice);
+    while(1){
+        if(choice == 1){
+            printf("Enter the mode number you want to play.(1 or 2)\n");
+            printf("1.SINGLE PLAYER\n2.DOUBLE PLAYER(time mod)\n3.RETURN\n4.EXIT");
+            while(1){
+                if(choice == 1){
+                    play_single_player_snake();
+                }
+                else if (choice == 2){
+                    play_double_player_snake();
+                }
+                else if (choice == 3){
+                    break;
+                }
+                else if (choice == 4){
+                    return 0;
+                }
+            }
+        }
+        else if(choice == 2){
+            printf("Enter the mode number you want to play.(1 or 2)\n");
+            printf("1.SINGLE PLAYER(time mode)\n2.DOUBLE PLAYER(time mode)\n3.RETURN\n4.EXIT");
+            while (1)
+            {
+                if (choice == 1){
+                    play_single_player_shooter();
+                }
+                else if (choice == 2){
+                    play_double_player_shooter();
+                }
+                else if (choice == 3){
+                    break;
+                }
+                else if (choice == 4){
+                    return 0;
+                }
+            }
+        }
+        else if(choice == 3){
+            return 0;
+        }
     }
-    system("cls");
-    snake_draw_gameover();
-    printf("%d", score * 10);
-    return 0;
 }

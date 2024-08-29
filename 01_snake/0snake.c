@@ -13,7 +13,7 @@ int main()
     int piece = 0;
     snake_setup(&x, &y, &fx, &fy, &height, &width, &score, &gameover);
     printf("x=%d,y=%d",x,y);
-    Sleep(1000);
+    // Sleep(1000);
     while (!gameover)
     {
         snake_draw(&height, &width, &x, &y, &fx, &fy, &flag, tailx, taily, &piece);
