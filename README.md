@@ -12,8 +12,9 @@ HOW TO USE :-
     1. Download the whole repository or clone it via github link.
     2. Then open the repository in any code editor and run main.c
     3. command to run main.c - gcc -o main.exe main.c -L. main_lib.a (as library is used);
-    4. Choose your game and mode you want to play.
-    5. ENJOY ☻☻☻☻
+    4. then run ./main.exe to enjoy your game
+    5. Choose your game and mode you want to play.
+    6. ENJOY ☻☻☻☻
 
 FEATURES :-
     1.DIFFERENT MODES - SINGLE PLAYER , DOUBLE PLAYER , TIME MODE
